@@ -35,4 +35,13 @@ class VegetableRecord implements Comparable<VegetableRecord> {
     public String toString() {
         return this.vegetableType + " " + this.country + " " + this.recordSize + " " + this.unit;
     }
+    public String getType(){
+        return this.vegetableType;
+    }
+    public int getSize(){
+        return this.recordSize;
+    }
+    public String getCountry(){
+        return this.country;
+    }
 }

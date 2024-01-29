@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class kth_javap_pathfinder {
-
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         
