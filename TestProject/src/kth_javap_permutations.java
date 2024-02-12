@@ -15,7 +15,7 @@ public class kth_javap_permutations {
         Set<String> permutations = new HashSet<>();
 
         /*Since the parameter called permutations in the method is an alias of our 
-        permutations Set that is declared in main, the changes the method does will persist outside of it. */
+        permutations Set that is declared in main, the changes the method performs will persist outside of it. */
         generatePermutations(permutations, "", S); 
 
         //Convert to an arraylist to make sorting it easier.
@@ -36,7 +36,7 @@ public class kth_javap_permutations {
         }
         else{
             for (int i = 0; i < remainder.length(); i++){
-                String furtherConstructed = constructed + remainder.charAt(i); // We att the current letter we're on to this new Prefix
+                String furtherConstructed = constructed + remainder.charAt(i); // We add the current letter we're on to this new Prefix
 
                 //Below we basically remove the current letter from the remaining string (since i is not included in the first, nor second substring)
                 String newRemainingString = remainder.substring(0, i) + remainder.substring(i + 1);
