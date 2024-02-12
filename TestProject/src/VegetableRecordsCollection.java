@@ -67,7 +67,7 @@ public class VegetableRecordsCollection {
                     }
                 }
 
-                // If we get the input: gurka Amerikas Förenade Stater 25 cm, så kommer storleken ligga på index 4 eftersom countryWordCount = 3
+                // If we get the input: gurka Amerikas Förenade Stater 25 cm, the size will be on index 4 since countryWordCount = 3
                 newVegetable = new VegetableRecord(vegetableData[0], countryName, Integer.parseInt(vegetableData[1 + countryWordCount]), vegetableData[2 + countryWordCount]);
             }
 

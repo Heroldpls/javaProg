@@ -9,7 +9,10 @@ public class kth_javap_commonsub {
 
         //Get input
         Scanner scanner = new Scanner(System.in);
+
+        //Length of substring
         int n = Integer.parseInt(scanner.nextLine());
+
         String S = scanner.nextLine(); 
         scanner.close();
 
@@ -17,7 +20,7 @@ public class kth_javap_commonsub {
         Map<String, Integer> mySubStrings = new HashMap<>(); // A dictionary
 
         for (int i = 0; i < S.length(); i++){
-            // If we find "EOF"
+            // Found out later that EOF means End-Of-File :)
             if(S.charAt(i) == 'E' && S.charAt(i + 1) == 'O' && S.charAt(i + 2) == 'F'){
                 break;
             }

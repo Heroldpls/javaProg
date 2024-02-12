@@ -21,21 +21,19 @@ public class kth_javap_alphasub {
                 }
                 break;
             }
-            if(unicode >= previousCharUnicode){
+            if(unicode >= previousCharUnicode){ // The current letter comes after the last one in unicode, i.e., they're ordered.
                 lengthCounter += 1;
             }
 
-            else{ // Reset
-                if (L < lengthCounter){
+            else{ // Reset if the the current letter is not ordered if compared to the previous one.
+                if (L < lengthCounter){ //If our current substring is longer than the last one we overwrite L, otherwise we simply reset.
                     L = lengthCounter;
                 }
-                lengthCounter = 1;
+                lengthCounter = 1; // Starts at one since we consider the current letter to be the first in the upcoming string.
             }
-            previousCharUnicode = unicode;
+            previousCharUnicode = unicode; //Store this letter for the next loop.
 
-            // Had to put this here aswell since I previously forgot to set 
-            // this value if we were done looping through the string
-            if (L < lengthCounter){
+            if (L < lengthCounter){ // If we've reached a longer length than what we've reached before.
                 L = lengthCounter;
             }
         }

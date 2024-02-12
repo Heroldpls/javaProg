@@ -28,7 +28,7 @@ public class kth_javap_basen {
         long numberBaseTen = 0;
         for(int i = 0; i < number.length(); i++){ //Have to check individual chars in the case the the base is >10 (If we find A,B and so on...)
             
-            //Get digit in base 10.
+            //Get digit in base 10 (second argument is the prior base)
             int digit = Integer.parseInt("" + number.charAt(i), oldBase); //"" + ... in order to convert the char to a String.
 
             numberBaseTen += digit * Math.pow(oldBase, number.length() - i - 1);
@@ -37,7 +37,6 @@ public class kth_javap_basen {
     }
 
     private static String convertBaseFromTen(long number , int newBase){
-        //OBS: Not the exact method you described in the assignment, but it's the method that was taught in our Discrete Mathmatics course.
         String numberNewBase = "";
 
         ArrayList<Long> rests = new ArrayList<>();

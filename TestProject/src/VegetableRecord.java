@@ -15,7 +15,7 @@ class VegetableRecord implements Comparable<VegetableRecord> {
     }
 
     @Override
-    public int compareTo(VegetableRecord other) {
+    public int compareTo(VegetableRecord other) { // Return negative number if other is "greater than" this object, and positive if it's "less than".
         // First sort alphabetically.
         int typeComparison = this.vegetableType.compareTo(other.vegetableType);
         if (typeComparison != 0) { //If the types aren't the same.

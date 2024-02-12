@@ -35,17 +35,15 @@ public class kth_javap_pathfinder {
             char letter = map[0][i];
             if(!(alreadyClearedPaths.contains(letter)) && letter != '*'){ //Only check the path from this starting tile if we haven't already found a path with this letter.
 
-                
                 tilesToCheck.add(new int[]{0, i});
                 while(!tilesToCheck.isEmpty()){
                     
                     int[] nextTile = tilesToCheck.pop();
-                    if (pathfinder.checkTile(nextTile[0], nextTile[1], letter, map, tilesToCheck)){
+                    if (pathfinder.checkTile(nextTile[0], nextTile[1], letter, map, tilesToCheck)){ // We've reached the other side.
                         alreadyClearedPaths.add(letter); 
                         System.out.print(letter);
                         break;
                     }
-                   
                 }
                 
                 tilesToCheck.clear();
@@ -59,7 +57,7 @@ public class kth_javap_pathfinder {
 
     private void getNextTile(int currentRow, int currentColumn, char[][] map, Deque<int[]> tilesToCheck, char letter){
         if(currentRow < map.length && currentRow >= 0 && currentColumn < map[0].length && currentColumn >= 0 
-        && map[currentRow][currentColumn] == letter){ 
+        && map[currentRow][currentColumn] == letter){  // If the tile is within the map and it contains the correct letter.
             tilesToCheck.push(new int[]{currentRow, currentColumn});
             map[currentRow][currentColumn] = '*'; //Change the tile to contain * in order to not add it to the stack again.
         }
@@ -68,11 +66,11 @@ public class kth_javap_pathfinder {
     private boolean checkTile( int currentRow, int currentColumn, char letter, char[][] map, Deque<int[]> tilesToCheck){ 
         //we're going to check the tile so we don't want to be able to check it again later.
 
-        if(currentRow == map.length - 1){
+        if(currentRow == map.length - 1){ //If we're at the bottom of the map.
             return true;
         }
         //Gets the neighboring tiles that have the same letter.
-        // Check order is based on the fact that I want to get rid of bad paths quickly, but doesn't seem to make a big difference.
+        // Since they're placed on the stack what will be placed on top is the Down direction.
         getNextTile(currentRow - 1, currentColumn, map, tilesToCheck, letter); // Up
         getNextTile(currentRow, currentColumn - 1, map, tilesToCheck, letter); // Left
         getNextTile(currentRow, currentColumn + 1, map, tilesToCheck, letter); // Right
