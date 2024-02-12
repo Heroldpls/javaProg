@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class kth_javap_alphasub {
-    /* 
+    
     public static void main(String[] args){
         int L = 1; //Since technically a single letter is always sorted, we can start it at one.
         Scanner scanner = new Scanner(System.in);
@@ -41,5 +41,5 @@ public class kth_javap_alphasub {
         }
         System.out.println(L);
     }
-    */
+    
 }
